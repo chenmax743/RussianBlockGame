@@ -8,7 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D Rb2D;
     private float MoveInputX;
     private float MoveInputY;
-    
+
+    public string HorizontalTnput = "Horizontal";
+    public string VerticalInput = "Vertical";
     void Start()
     {
         Rb2D = GetComponent<Rigidbody2D>();
@@ -18,9 +20,8 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
-        MoveInputX=Input.GetAxis("Horizontal");
-        MoveInputY=Input.GetAxis("Vertical");
-        Rb2D.velocity = new Vector2(MoveInputX*MoveSpeed,MoveInputY*MoveSpeed);
-        
+        MoveInputX = Input.GetAxis(HorizontalTnput);
+        MoveInputY = Input.GetAxis(VerticalInput);
+        Rb2D.velocity = new Vector2(MoveInputX*MoveSpeed, MoveInputY*MoveSpeed);
     }
 }

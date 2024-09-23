@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class BulletShooting : MonoBehaviour
 {
@@ -8,12 +9,14 @@ public class BulletShooting : MonoBehaviour
     public GameObject gProjectile;
     public Transform tFirePoint;
 
-    private float fBulletDestroy=5f;
+    public KeyCode kShootKey;
+
+    private float fBulletDestroy=3.3f;
 
     
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(kShootKey))
         {
             BulletShoot();
         }
@@ -29,4 +32,8 @@ public class BulletShooting : MonoBehaviour
 
         Destroy(Bullet,fBulletDestroy);
     }
+
+    
+
+
 }
