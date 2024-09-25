@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerLife : MonoBehaviour
 {
     public List<GameObject> LPlayerLife;
+    public GameManager GameManager;
     
     public void RemoveImage() //§R°£¹Ï¤ù
     {
@@ -20,5 +21,11 @@ public class PlayerLife : MonoBehaviour
 
             LPlayerLife.RemoveAt(LPlayerLife.Count - 1);
         }
+
+        if(LPlayerLife.Count ==0 && GameManager!=null)
+        {
+            GameManager.ShowMessage();
+        }
+
     }
 }
