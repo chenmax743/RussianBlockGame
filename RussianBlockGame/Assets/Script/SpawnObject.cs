@@ -11,7 +11,7 @@ public class SpawnObject : MonoBehaviour
     public int MaxObject;
 
     private float Timer;
-    private List<GameObject> lSpawnObject = new List<GameObject>();
+    private List<GameObject> lSpawnObject = new List<GameObject>(); //儲存生成的物件
 
     private void Update()
     {
@@ -26,13 +26,26 @@ public class SpawnObject : MonoBehaviour
         }
     }
 
-    void SpawnObj()
+    void SpawnObj() //生成物件
     {
         float fRandomX = Random.Range(SpawnAreaMin.x, SpawnAreaMax.x);
         float fRandomY = Random.Range(SpawnAreaMax.y, SpawnAreaMin.y);
         Vector2 vSpawnPosition = new Vector2(fRandomX, fRandomY);
 
-        GameObject newObject = Instantiate(gObjectPrefab, vSpawnPosition, Quaternion.identity);
-        lSpawnObject.Add(newObject);
+
+        float fCheckRadius = 3f;
+
+        if(!Physics2D.OverlapCircle(vSpawnPosition,fCheckRadius))//檢查是否重疊
+        {
+            GameObject newObject = Instantiate(gObjectPrefab, vSpawnPosition, Quaternion.identity);
+            lSpawnObject.Add(newObject);
+        }
+
+        else
+        {
+            SpawnObj();
+        }
+
+        
     }
 }
