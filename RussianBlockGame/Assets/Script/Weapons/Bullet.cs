@@ -16,5 +16,10 @@ public class Bullet : MonoBehaviour
                 cPlayer.RemoveImage();
             }
         }
+
+        if(collider.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

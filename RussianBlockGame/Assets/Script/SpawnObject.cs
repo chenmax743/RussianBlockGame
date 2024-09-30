@@ -15,13 +15,15 @@ public class SpawnObject : MonoBehaviour
 
     private void Update()
     {
-        if (lSpawnObject.Count<MaxObject)
         {
-            Timer += Time.deltaTime;
-            if(Timer>=fSpawnTime)
+            if (lSpawnObject.Count < MaxObject)
             {
-                SpawnObj();
-                Timer = 0f;
+                Timer += Time.deltaTime;
+                if (Timer >= fSpawnTime)
+                {
+                    SpawnObj();
+                    Timer = 0f;
+                }
             }
         }
     }

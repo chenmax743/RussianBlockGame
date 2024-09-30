@@ -155,7 +155,7 @@ MonoBehaviour:
   fSpawnTime: 3
   SpawnAreaMin: {x: -3.48, y: 2.55}
   SpawnAreaMax: {x: 3.5, y: -2.55}
-  MaxObject: 5
+  MaxObject: 20
 --- !u!4 &14430446
 Transform:
   m_ObjectHideFlags: 0
