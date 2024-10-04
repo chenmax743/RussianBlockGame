@@ -15,11 +15,20 @@ public class Bullet : MonoBehaviour
             {
                 cPlayer.RemoveImage();
             }
+
+            Destroy(gameObject);
         }
 
         if(collider.CompareTag("Wall"))
         {
             Destroy(gameObject);
         }
+
+        if(collider.CompareTag("Bullet"))
+        {
+            Destroy(gameObject);
+        }
+
+        
     }
 }

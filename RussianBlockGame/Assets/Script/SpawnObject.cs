@@ -30,24 +30,30 @@ public class SpawnObject : MonoBehaviour
 
     void SpawnObj() //生成物件
     {
-        float fRandomX = Random.Range(SpawnAreaMin.x, SpawnAreaMax.x);
-        float fRandomY = Random.Range(SpawnAreaMax.y, SpawnAreaMin.y);
-        Vector2 vSpawnPosition = new Vector2(fRandomX, fRandomY);
+        int MaxAttempts = 10;
+        int attempts = 0;
+        bool isSpawned = false;
 
-
-        float fCheckRadius = 3f;
-
-        if(!Physics2D.OverlapCircle(vSpawnPosition,fCheckRadius))//檢查是否重疊
+        while (attempts < MaxAttempts && !isSpawned)
         {
-            GameObject newObject = Instantiate(gObjectPrefab, vSpawnPosition, Quaternion.identity);
-            lSpawnObject.Add(newObject);
-        }
 
-        else
-        {
-            SpawnObj();
-        }
 
-        
+            float fRandomX = Random.Range(SpawnAreaMin.x, SpawnAreaMax.x);
+            float fRandomY = Random.Range(SpawnAreaMax.y, SpawnAreaMin.y);
+            Vector2 vSpawnPosition = new Vector2(fRandomX, fRandomY);
+
+
+            float fCheckRadius = 3f;
+
+            if (!Physics2D.OverlapCircle(vSpawnPosition, fCheckRadius))//檢查是否重疊
+            {
+                GameObject newObject = Instantiate(gObjectPrefab, vSpawnPosition, Quaternion.identity);
+                lSpawnObject.Add(newObject);
+                isSpawned = true;
+            }
+            attempts++;
+
+
+        }
     }
 }
