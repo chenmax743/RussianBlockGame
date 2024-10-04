@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gObjectPrefab: {fileID: 5082442823665452099, guid: b880afce3784dd74fb4eb5dbe4554659, type: 3}
-  fSpawnTime: 3
+  fSpawnTime: 1
   SpawnAreaMin: {x: -3.48, y: 2.55}
   SpawnAreaMax: {x: 3.5, y: -2.55}
   MaxObject: 20
