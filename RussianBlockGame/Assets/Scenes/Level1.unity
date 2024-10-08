@@ -156,7 +156,7 @@ MonoBehaviour:
   SpawnAreaMin: {x: -3.48, y: 2.55}
   SpawnAreaMax: {x: 3.5, y: -2.55}
   MaxObject: 20
-  verticalSpacing: 1
+  verticalSpacing: 1.1
   fCheckRadius: 0.5
 --- !u!4 &14430446
 Transform:
