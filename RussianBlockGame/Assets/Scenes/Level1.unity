@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 14430446}
   - component: {fileID: 14430445}
+  - component: {fileID: 14430447}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -173,6 +174,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &14430447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14430444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1840b900811fda641b7708846383b0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gBomb: {fileID: 3926755668097067737, guid: 7f94ceed0f025f048a5c2d586fa40d40, type: 3}
+  vSpawnAreaMin: {x: -3.48, y: 2.55}
+  vSpawnAreaMax: {x: 3.5, y: -2.55}
+  fSpawnInterval: 3
+  iMaxSpawn: 3
 --- !u!1 &209564776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,7 +1726,7 @@ Transform:
   m_GameObject: {fileID: 1787465519}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.97, y: 0, z: 0}
+  m_LocalPosition: {x: -7.7, y: 0.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1916,8 +1934,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1239354852}
-  - {fileID: 1787465521}
   - {fileID: 209564778}
+  - {fileID: 1787465521}
   - {fileID: 236503535}
   - {fileID: 1671583294}
   - {fileID: 14430446}

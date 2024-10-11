@@ -28,6 +28,10 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if(collider.CompareTag("Bomb"))
+        {
+            Destroy(gameObject);
+        }
 
         
     }
